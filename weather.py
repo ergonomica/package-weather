@@ -20,9 +20,11 @@ import urllib2
 
 verbs = {}
 
+import re
+
 def weather_for_city(city):
     """Return the weather for a specific city."""
-    req = urllib2.Request("wttr.in/%s" % (x.strip().lower()))
+    req = urllib2.Request("http://wttr.in/%s" % (city.strip().lower()))
     res = urllib2.urlopen(req)
     return res.read()
     
